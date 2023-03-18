@@ -1,0 +1,45 @@
+@startuml
+abstract class VehiculoAlquiler {
+String - Marca
+String - Modelo
+LocalDate - fechaCompra
+Double - tarifaHora
+
+getTarifaHora()
+toString()
+}
+class Bicicleta{
+Int - Velocidad
+
+getTarifaHora()
+toString()
+}
+class Segway{
+Double - alturaMinima
+Double - autonomiaKm
+
+getTarifaHora()
+toString()
+}
+class Giroscopio{
+Double - autonomiaKm
+String -tiempoAutonomia
+
+getTarifaHora()
+toString
+}
+
+VehiculoAlquiler <|-- Bicicleta
+VehiculoAlquiler <|-- Segway
+VehiculoAlquiler <|-- Giroscopio
+
+class Vehiculos{
+ejecutar()
+}
+
+class Main{
+Vehiculos.ejecutar()
+}
+
+Vehiculos -- VehiculoAlquiler
+@enduml
